@@ -11,7 +11,7 @@ dependencies = [
 
 [project.urls]
 repository = "https://github.com/domhan-an-fiosracht/herman"
-documentation = "https://github.com/domhan-an-fiosracht/herman"
+documentation = "https://effective-broccoli-n23v1ev.pages.github.io/"
 
 [build-system]
 requires = ["uv_build"]
