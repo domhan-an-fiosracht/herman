@@ -1,0 +1,78 @@
+[project]
+name = "herman"
+version = "0.1.0"
+requires-python = ">= 3.14"
+dependencies = [
+    "pydantic-settings>=2.2.1",
+    "typer>=0.12.3",
+    "python-frontmatter>=1.1.0",
+]
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    # DX
+    "nox>=2024.4.15",
+    "pre-commit>=3.7.1",
+    # Linters
+    "ruff>=0.5.2",
+    "mypy>=1.10.1",
+]
+docs = [
+    "sphinx>=7.4.4",
+    # Theme
+    "furo>=2024.5.6",
+    # Extensions
+    "sphinx-autoapi>=3.1.2",
+    "releases>=2.1.1",
+]
+tests = [
+    "coverage>=7.6.1",
+    "pytest>=9.0.0",
+    # Extensions
+    "pytest-randomly>=3.15.0",
+]
+
+[tool.uv]
+required-version = ">=0.9.7"
+
+[tool.ruff.lint]
+select = [
+    "ALL",
+]
+ignore = [   
+    "TC",      # (flake8-type-checking) - Typer uses runtime type checking
+    "UP037",   # (quoted-annotation) - Typer uses runtime type checking
+    "B008",    # (Do not perform function call `` in argument defaults) - Typer defaults
+    "T201",    # (`print` found) - FIXME
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"docs/*" = [
+    "INP001", # (File `docs/conf.py` is part of an implicit namespace package. Add an `__init__.py`.) - Docs are not modules
+]
+"tests/*" = [
+    "S101",   # (Use of `assert` detected) - Yes, that's the point
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["herman"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["frontmatter"]
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["herman"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers"
