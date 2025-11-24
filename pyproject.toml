@@ -44,7 +44,7 @@ required-version = ">=0.9.7"
 select = [
     "ALL",
 ]
-ignore = [   
+ignore = [
     "TC",      # (flake8-type-checking) - Typer uses runtime type checking
     "UP037",   # (quoted-annotation) - Typer uses runtime type checking
     "B008",    # (Do not perform function call `` in argument defaults) - Typer defaults
