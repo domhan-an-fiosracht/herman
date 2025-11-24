@@ -9,6 +9,10 @@ dependencies = [
     "python-frontmatter>=1.1.0",
 ]
 
+[project.urls]
+repository = "https://github.com/domhan-an-fiosracht/herman"
+documentation = "https://github.com/domhan-an-fiosracht/herman"
+
 [build-system]
 requires = ["uv_build"]
 build-backend = "uv_build"
