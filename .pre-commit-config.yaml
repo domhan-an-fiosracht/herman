@@ -18,15 +18,11 @@ repos:
       - id: end-of-file-fixer
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 358ed3edbafb488413578da33f146c2be3ae2551  # frozen: 0.9.22
+    rev: 8afdb18d56d3bd3edea0c4ddde96965d6894f5f3  # frozen: 0.9.26
     hooks:
       - id: uv-lock
-      - id: uv-export
-        args: ["--quiet", "--frozen", "--all-groups", "--output-file=requirements.txt"]
-      - id: uv-export
-        args: ["--quiet", "--frozen", "--all-groups", "--format=pylock.toml", "--output-file=pylock.toml"]
 
   - repo: https://github.com/woodruffw/zizmor-pre-commit
-    rev: 7fc963270df722f37707d47ff41265fe8f460822  # frozen: v1.20.0
+    rev: b546b77c44c466a54a42af5499dcc0dcc1a3193f  # frozen: v1.22.0
     hooks:
       - id: zizmor

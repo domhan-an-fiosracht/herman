@@ -42,7 +42,10 @@ tests = [
 ]
 
 [tool.uv]
-required-version = ">=0.9.7"
+required-version = ">=0.9.26"
+environments = [
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
 
 [tool.ruff.lint]
 select = [
