@@ -3,13 +3,13 @@
 from ._base import HermanBaseModel
 
 
-class Character(HermanBaseModel):
+class Character(HermanBaseModel, frozen=True):
     """Character model representing an individual character."""
 
     name: str
 
 
-class StoryConfig(HermanBaseModel):
+class StoryConfig(HermanBaseModel, frozen=True):
     """Story configuration model."""
 
     characters: dict[str, Character]
