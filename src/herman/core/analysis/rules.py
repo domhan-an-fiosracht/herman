@@ -16,7 +16,7 @@ from herman.core import (
 def lint_file(config: StoryConfig, file: Path) -> list[AnalysisMessage]:
     """Verify the metadata of a single story Markdown file."""
     messages: list[AnalysisMessage] = []
-    post = frontmatter.load(file)
+    post = frontmatter.load(str(file))
 
     try:
         metadata = StoryFileMetadata.model_validate(post.metadata)

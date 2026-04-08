@@ -1,7 +1,7 @@
 """Analysis message representation."""
 
 from dataclasses import dataclass, field
-from enum import Enum
+from enum import StrEnum
 from pathlib import Path
 from typing import Self
 
@@ -10,7 +10,7 @@ from rich.panel import Panel
 from rich.text import Text
 
 
-class Severity(str, Enum):
+class Severity(StrEnum):
     """Severity levels for analysis messages."""
 
     ERROR = "error"
@@ -44,7 +44,7 @@ class Severity(str, Enum):
             Severity.NOTICE: "cyan",
         }[self]
 
-    def __lt__(self, other: Severity) -> bool:  # type: ignore[override]
+    def __lt__(self, other: Severity) -> bool:  # type: ignore[override] # ty: ignore[invalid-method-override]
         """Compare severities based on their order."""
         return self.order < other.order
 

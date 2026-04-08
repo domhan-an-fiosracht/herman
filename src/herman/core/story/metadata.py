@@ -7,7 +7,7 @@ from pydantic import Field
 from ._base import HermanBaseModel
 
 
-class StoryFileMetadata(HermanBaseModel):
+class StoryFileMetadata(HermanBaseModel, frozen=True):
     """Metadata for a story file."""
 
     title: str | None = None
