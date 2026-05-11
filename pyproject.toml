@@ -4,8 +4,8 @@ description = "Your friendly neighborhood story helper"
 version = "0.1.0"
 requires-python = ">= 3.14"
 dependencies = [
-    "pydantic-settings>=2.13.1",
-    "typer>=0.24.1",
+    "pydantic-settings>=2.14.0",
+    "typer>=0.24.2",
     "python-frontmatter>=1.1.0",
 ]
 
@@ -20,12 +20,12 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     # DX
-    "nox>=2026.2.9",
-    "prek>=0.3.8",
+    "nox>=2026.4.10",
+    "prek>=0.3.10",
     # Linters
-    "ruff>=0.15.9",
-    "mypy>=1.20.0",
-    "ty>=0.0.21",
+    "ruff>=0.15.12",
+    "mypy>=1.20.2",
+    "ty>=0.0.32",
 ]
 docs = [
     "sphinx>=9.1.0",
@@ -39,7 +39,7 @@ tests = [
     "coverage>=7.13.5",
     "pytest>=9.0.3",
     # Extensions
-    "pytest-randomly>=4.0.1",
+    "pytest-randomly>=4.1.0",
 ]
 
 [tool.uv]
